@@ -2,6 +2,8 @@ package org.example.seleniumWebdriver.udemy;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -9,7 +11,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class FrameHandling {
-    private static FirefoxDriver driver;
+    private static WebDriver driver;
 
     public static void main(String[] args) {
         WebDriverManager.firefoxdriver().setup();
@@ -20,13 +22,12 @@ public class FrameHandling {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         //day 5 in udemy.com selenium webdriver
-        driver.get("https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_button_test");
-//        driver.switchTo().frame("iframeResult");
-//        driver.findElement(By.xpath("/html/body/button")).click();
-        List<WebElement> frames = driver.findElementsByTagName("iframe");
-        System.out.println(frames.size());
-        frames.stream()
-                .forEach(y-> System.out.println(y));
+        driver.get("https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_form_submit");
+        driver.switchTo().frame("iframeResult");
+        driver.findElement(By.xpath("//*[@id=\"myForm\"]/input[2]")).sendKeys("suraj");
+
+        ((JavascriptExecutor)driver).executeScript("myFunction()");
+
         driver.quit();
     }
 }
