@@ -13,6 +13,8 @@ public class StreamTryOuts {
         IntStream
                 .range(1, 10)
                 .forEach(System.out::print);
+
+
         System.out.println();
 
         IntStream
