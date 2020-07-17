@@ -20,8 +20,11 @@ public class TestListener implements ITestListener {
     @Override
     public void onTestFailure(ITestResult result) {
         Reporter.log("failed Gurung: "+result.getMethod());
-//        Reporter.log("<a href=\"https://www.w3schools.com/\">Visit W3Schools.com!</a>\n");
-        Reporter.log("<a href=\"file:///Users/surajgurung/Downloads/women_book.jpg\" target=\"_blank\">screen 1 shot</a>");
+        Reporter.log("<a href=\"https://www.w3schools.com/\">Visit W3Schools.com!</a>");
+        Reporter.log("<br>");
+        Reporter.log("<a href=\"https://www.w3schools.com/\"<img src=\"/Users/surajgurung/Documents/mavenJavaSuraj/src/main/resources/women_book.jpg alt=\"Flowers in Chania\" width=\"500\" height=\"600\"\"</a>");
+
+
 
     }
 
